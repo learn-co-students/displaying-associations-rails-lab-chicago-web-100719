@@ -1,8 +1,11 @@
 class SongsController < ApplicationController
   def index
+    @songs = Song.all
   end
 
   def show
+    @song = Song.find(params[:id])
+    redirect_to song_path
   end
 
   def new
